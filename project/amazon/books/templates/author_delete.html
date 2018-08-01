@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="{% url 'authors-delete' id=form.instance.id %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <div>Вы точно хотите удалить {{ form.instance.full_name }}?</div>
+    <input type="submit" value="Да" />
+  </form>
+{% endblock %}

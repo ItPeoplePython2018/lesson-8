@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Жанры{% endblock %}
+
+{% block content %}
+  <div><a href="{% url 'genre-new' %}">Создать жанр</a></div>
+  <ul>
+  {% for genre in genres %}
+    <li>
+      <a href="{% url 'genre-detail' id=genre.id %}">{{ genre.name }}</a>
+      <a href="{% url 'genre-edit' id=genre.id %}">Редактировать</a>
+      <a href="{% url 'genre-delete' id=genre.id %}">Удалить</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="{% if form.instance.id %}
+        {% url 'genre-edit' id=form.instance.id %}
+      {% else %}
+        {% url 'genre-new' %}
+      {% endif %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+      <input type="submit" value="Отправить" />
+    </p>
+  </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+'
+{% block title %}Книжный магазин{% endblock %}
+
+{% block content %}
+  <div>
+    <div><a href="{% url 'genre-list' %}">Жанры</a></div>
+    <div><a href="{% url 'authors-list' %}">Авторы</a></div>
+  </div>
+{% endblock %}
